@@ -34,12 +34,18 @@ const Features = () => {
         },
         {scrub: '5.5'}
         )
-        animateWithGsap('.g_text',{
-            y:0 ,
+
+        gsap.to('.g_text',{
+            y:0,
             opacity:1,
             ease: 'power2.inOut',
-            duration:1,
-            stagger:0.25
+            duration:2,
+            stagger:0.25,
+            scrollTrigger: {
+                trigger: '.g_text',
+                toggleActions: 'play pause reverse restart',
+                start: '-10% bottom'
+            }
         })
     },[])
 
